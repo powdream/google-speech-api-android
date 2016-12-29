@@ -13,6 +13,26 @@ It is written based on Google Cloud Speech Api v1beta1.
 
 ## How to Use
 
+### Gradle
+
+```gradle
+allprojects {
+    repositories {
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+```gradle
+dependencies {
+    compile 'com.github.powdream:google-speech-api-android:${VERSION}'
+    ...
+}
+```
+
+Please refer to the [JitPack](https://jitpack.io/) homepage for more information.
+
 ### Android Manifest
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
