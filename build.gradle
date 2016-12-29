@@ -1,0 +1,32 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+ext {
+    play_services_version = '10.0.1'
+    support_library_version = '24.2.1'
+    butterknife_version = '8.4.0'
+    rx_java_version = '1.2.4'
+    rx_android_version = '1.2.1'
+    retrofit_version = '2.1.0'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

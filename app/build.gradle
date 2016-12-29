@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
+    defaultConfig {
+        multiDexEnabled true
+        applicationId "jerry.execise.speechapi"
+        minSdkVersion 19
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Modules
+    compile project(path: ':jerry.sdk.google')
+
+    // ********** Google **********
+    // Support Library
+    compile "com.android.support:appcompat-v7:$support_library_version"
+    compile "com.android.support:support-annotations:$support_library_version"
+    compile 'com.android.support:multidex:1.0.1'
+
+    // Reactive
+    compile "io.reactivex:rxandroid:$rx_android_version"
+    compile "io.reactivex:rxjava:$rx_java_version"
+
+    // Butter Knife
+    compile "com.jakewharton:butterknife:$butterknife_version"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife_version"
+
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    testCompile 'junit:junit:4.12'
+}
